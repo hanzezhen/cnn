@@ -7,18 +7,19 @@ from train import train_model
 
 #交叉验证
 s_piece = 8
+
 i=2
 
 #文件样本数
 t_num = 719
 
-num_epochs = 34
+num_epochs = 100
 
 lr = 0.00005
 
 datapath='/home/hanzezhen/文档/cnn/MICNNdata/test/a.mat'
 
-savepath='/home/hanzezhen/文档/hanzezhen/modelsave'
+savepath='/home/hanzezhen/文档/giit/modelsave'
 
 
 train_list,test_list = select(s_piece,i,t_num,123)
@@ -35,8 +36,8 @@ data={
 }
 
 data_len = {
-    'train' :  len(train_data),
-    'test'  :  len(test_data)
+    'train' :  len(train_list),
+    'test'  :  len(test_list)
 }
 
 cnn = CNN()
