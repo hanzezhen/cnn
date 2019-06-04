@@ -43,14 +43,14 @@ def train_model(model,num_epochs,data,device,optimizer,criterion,datalen,savepat
                 epoch_loss = running_loss / datalen[phase]
                 epoch_acc = running_corrects.double() / datalen[phase]
                 print('{} Loss: {:.4f} Acc: {:.4f}'.format(phase, epoch_loss, epoch_acc))
-                # writer.add_scalar('Train/Loss', epoch_loss, epoch)
-                # writer.add_scalar('Train/Acc', epoch_acc, epoch)
+                writer.add_scalar('Train/Loss', epoch_loss, epoch)
+                writer.add_scalar('Train/Acc', epoch_acc, epoch)
             else:
                 epoch_loss = running_loss / datalen[phase]
                 epoch_acc = running_corrects.double() / datalen[phase]
                 print('{} Loss: {:.4f} Acc: {:.4f}'.format(phase, epoch_loss, epoch_acc))
-                # writer.add_scalar('Test/Loss', epoch_loss, epoch)
-                # writer.add_scalar('Test/Acc', epoch_acc, epoch)
+                writer.add_scalar('Test/Loss', epoch_loss, epoch)
+                writer.add_scalar('Test/Acc', epoch_acc, epoch)
                 if epoch_acc > best_acc:
                     best_acc = epoch_acc
 

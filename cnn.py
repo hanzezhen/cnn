@@ -8,7 +8,7 @@ from train import train_model
 #交叉验证
 s_piece = 8
 
-i=2
+i=4
 
 #文件样本数
 t_num = 719
@@ -21,8 +21,9 @@ datapath='/home/hanzezhen/文档/cnn/MICNNdata/test/a.mat'
 
 savepath='/home/hanzezhen/文档/giit/modelsave'
 
+random_seed = 123
 
-train_list,test_list = select(s_piece,i,t_num,123)
+train_list,test_list = select(s_piece,i,t_num,random_seed)
 
 data1 = myData(datapath,train_list)
 data2 =  myData(datapath,test_list)
