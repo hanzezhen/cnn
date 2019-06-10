@@ -3,7 +3,13 @@ from tensorboardX import SummaryWriter
 import datetime
 import os
 def train_model(model,num_epochs,data,device,optimizer,criterion,datalen,savepath):
-    writer = SummaryWriter('CNN')
+    nowtim = datetime.datetime.now().strftime('%H%M')
+
+    fl = nowtim +'CNN'
+
+
+
+    writer = SummaryWriter(fl)
 
     since = time.time()
 
@@ -53,6 +59,17 @@ def train_model(model,num_epochs,data,device,optimizer,criterion,datalen,savepat
                 writer.add_scalar('Test/Acc', epoch_acc, epoch)
                 if epoch_acc > best_acc:
                     best_acc = epoch_acc
+                    filename = nowtim + 'acc' + str(int(best_acc * 100)) + '.t7'
+                    path = os.path.join(savepath, filename)
+                    torch.save(
+                        {
+                            'epoch': num_epochs,
+                            'model_state_dict': model.state_dict(),
+                            'optimizer_state_dict': optimizer.state_dict(),
+                            'best Acc': best_acc,
+
+                        }, path
+                    )
 
     print()
     writer.close()
@@ -61,19 +78,9 @@ def train_model(model,num_epochs,data,device,optimizer,criterion,datalen,savepat
         time_elapsed // 60, time_elapsed % 60))
     print('Best test Acc: {:4f}'.format(best_acc))
 
-    nowtime = datetime.datetime.now().strftime('%m%d-%H%M%S_')
-    filename = nowtime+'acc'+str(int(best_acc*100))+'.t7'
-    path = os.path.join(savepath,filename)
 
-    torch.save(
-        {
-            'epoch': num_epochs,
-            'model_state_dict': model.state_dict(),
-            'optimizer_state_dict': optimizer.state_dict(),
-            'best Acc':best_acc,
 
-        },path
-    )
+
 
 
     return model

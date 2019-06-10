@@ -37,7 +37,7 @@ class CNN(nn.Module):
         ),  # output shape (32,7,7)
             nn.ReLU(),
             nn.MaxPool2d(2))
-        self.out1 = nn.Linear(6072, 100)
+        self.out1 = nn.Linear(3468, 100)
 
         self.out2 = nn.Linear(100, 2)# 5808
 

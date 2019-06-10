@@ -5,55 +5,59 @@ import torch
 import torch.nn as nn
 from train import train_model
 
-#交叉验证
-s_piece = 8
+if __name__=='__main__':
 
-i=4
+    #交叉验证
+    s_piece = 8
 
-#文件样本数
-t_num = 719
+    i=4
 
-num_epochs = 100
+    #文件样本数
+    t_num = 3100
 
-lr = 0.00005
+    num_epochs = 110
 
-datapath='/home/hanzezhen/文档/cnn/MICNNdata/test/a.mat'
+    lr = 0.0001
 
-savepath='/home/hanzezhen/文档/giit/modelsave'
+    datapath = r'C:\Users\Lenovo\Desktop\hanzezhen\giit/gan_cnndata_guiyihua.mat'
 
-random_seed = 123
+    savepath = r'C:\Users\Lenovo\Desktop\hanzezhen\giit/modelsave'
 
-train_list,test_list = select(s_piece,i,t_num,random_seed)
+    random_seed = 123
 
-data1 = myData(datapath,train_list)
-data2 =  myData(datapath,test_list)
+    train_list,test_list = select(s_piece,i,t_num,random_seed)
 
-train_data = DataLoader(dataset=data1,batch_size=80,shuffle=True)
-test_data = DataLoader(dataset=data2,batch_size=1,shuffle=True)
+    test_2_list = [ x for x in test_list if x<719]
 
-data={
-    'train' :  train_data,
-    'test'  :  test_data
-}
+    data1 = myData(datapath,train_list)
+    data2 = myData(datapath,test_2_list)
 
-data_len = {
-    'train' :  len(train_list),
-    'test'  :  len(test_list)
-}
+    train_data = DataLoader(dataset=data1,batch_size=80,shuffle=True)
+    test_data = DataLoader(dataset=data2,batch_size=1,shuffle=True)
 
-cnn = CNN()
+    data = {
+        'train' :  train_data,
+        'test'  :  test_data
+    }
 
-if torch.cuda.is_available():cnn = cnn.cuda()
+    data_len = {
+        'train' :  len(train_list),
+        'test'  :  len(test_2_list)
+    }
 
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    cnn = CNN()
 
-cnn.apply(weights_init)
+    if torch.cuda.is_available():cnn = cnn.cuda()
 
-optimizer = torch.optim.Adam(cnn.parameters(),lr=lr)
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-loss_func = nn.CrossEntropyLoss()
+    cnn.apply(weights_init)
 
-train_model(cnn,num_epochs,data,device,optimizer,loss_func,data_len,savepath)
+    optimizer = torch.optim.Adam(cnn.parameters(),lr=lr)
+
+    loss_func = nn.CrossEntropyLoss()
+
+    train_model(cnn,num_epochs,data,device,optimizer,loss_func,data_len,savepath)
 
 
 
