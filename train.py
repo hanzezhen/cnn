@@ -3,11 +3,10 @@ from tensorboardX import SummaryWriter
 import datetime
 import os
 def train_model(model,num_epochs,data,device,optimizer,criterion,datalen,savepath):
-    nowtim = datetime.datetime.now().strftime('%H%M')
+
+    nowtim = datetime.datetime.now().strftime('%m%d-%H%M')
 
     fl = nowtim +'CNN'
-
-
 
     writer = SummaryWriter(fl)
 
@@ -15,8 +14,10 @@ def train_model(model,num_epochs,data,device,optimizer,criterion,datalen,savepat
 
     best_acc =0.0
 
+    _dic = {}
+
     for epoch in range(num_epochs):
-        print('Epoch {}/{}'.format(epoch,num_epochs-1))
+        print('Epoch {}/{}'.format(epoch+1,num_epochs))
 
         for phase in ['train','test']:
             if phase == 'train':
@@ -57,31 +58,31 @@ def train_model(model,num_epochs,data,device,optimizer,criterion,datalen,savepat
                 print('{} Loss: {:.4f} Acc: {:.4f}'.format(phase, epoch_loss, epoch_acc))
                 writer.add_scalar('Test/Loss', epoch_loss, epoch)
                 writer.add_scalar('Test/Acc', epoch_acc, epoch)
+
                 if epoch_acc > best_acc:
                     best_acc = epoch_acc
-                    filename = nowtim + 'acc' + str(int(best_acc * 100)) + '.t7'
-                    path = os.path.join(savepath, filename)
-                    torch.save(
+
+                    _dic.update(
                         {
                             'epoch': num_epochs,
                             'model_state_dict': model.state_dict(),
                             'optimizer_state_dict': optimizer.state_dict(),
                             'best Acc': best_acc,
 
-                        }, path
+                        }
                     )
 
     print()
     writer.close()
     time_elapsed = time.time() - since
+
+    filename = nowtim + 'acc' + str(int(best_acc * 100)) + '.t7'
+    path = os.path.join(savepath, filename)
+    torch.save(_dic,path)
+
     print('Training complete in {:.0f}m {:.0f}s'.format(
         time_elapsed // 60, time_elapsed % 60))
     print('Best test Acc: {:4f}'.format(best_acc))
-
-
-
-
-
 
     return model
 

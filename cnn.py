@@ -32,7 +32,7 @@ if __name__=='__main__':
     data1 = myData(datapath,train_list)
     data2 = myData(datapath,test_2_list)
 
-    train_data = DataLoader(dataset=data1,batch_size=80,shuffle=True)
+    train_data = DataLoader(dataset=data1,batch_size=48,shuffle=True)
     test_data = DataLoader(dataset=data2,batch_size=1,shuffle=True)
 
     data = {
@@ -47,7 +47,10 @@ if __name__=='__main__':
 
     cnn = CNN()
 
-    if torch.cuda.is_available():cnn = cnn.cuda()
+    if torch.cuda.is_available():
+        cnn = cnn.cuda()
+        print('正在使用GPU...')
+    else:print('正在使用CPU...')
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 

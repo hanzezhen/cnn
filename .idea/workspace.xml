@@ -4,8 +4,16 @@
     <list default="true" id="ea7daaa0-7c2a-4803-a0bf-9a743988ebde" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/showpic.py" beforeDir="false" afterPath="$PROJECT_DIR$/showpic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelsave/1446acc53.t7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelsave/1446acc54.t7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelsave/1446acc55.t7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelsave/1446acc59.t7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelsave/1446acc67.t7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelsave/1446acc69.t7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelsave/1446acc70.t7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelsave/1446acc71.t7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelsave/1446acc72.t7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelsave/1446acc73.t7" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +27,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cnn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+            <state relative-caret-position="231">
+              <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -49,7 +57,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="874">
+            <state relative-caret-position="466">
               <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
@@ -61,8 +69,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+            <state relative-caret-position="558">
+              <caret line="88" selection-start-line="88" selection-end-line="88" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -92,7 +100,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="320" />
     <option name="y" value="170" />
     <option name="width" value="1920" />
@@ -103,7 +111,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -111,10 +118,16 @@
               <item name="giit" type="b2602c69:ProjectViewProjectNode" />
               <item name="giit" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="giit" type="b2602c69:ProjectViewProjectNode" />
+              <item name="giit" type="462c0819:PsiDirectoryNode" />
+              <item name="modelsave" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -208,18 +221,19 @@
       <workItem from="1559633909234" duration="1193000" />
       <workItem from="1559802939033" duration="1861000" />
       <workItem from="1559810503231" duration="51000" />
-      <workItem from="1560149065724" duration="82000" />
+      <workItem from="1560149065724" duration="893000" />
+      <workItem from="1560153646672" duration="2235000" />
+      <workItem from="1560212089625" duration="2278000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16430000" />
+    <option name="totallyTimeSpent" value="21754000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="2062" height="1126" extended-state="7" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12025948" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12225549" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -247,16 +261,13 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/giit$train.coverage" NAME="train Coverage Results" MODIFIED="1559630128972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/giit$cnn.coverage" NAME="cnn Coverage Results" MODIFIED="1560149150916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/giit$cnn.coverage" NAME="cnn Coverage Results" MODIFIED="1560213940795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cnn.py">
+    <entry file="file://$PROJECT_DIR$/showpic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="184">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -267,9 +278,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
+        <state relative-caret-position="466">
           <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
@@ -277,17 +298,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/showpic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+        <state relative-caret-position="558">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
