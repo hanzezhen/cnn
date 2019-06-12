@@ -27,7 +27,14 @@ if __name__=='__main__':
 
     train_list,test_list = select(s_piece,i,t_num,random_seed)
 
-    test_2_list = [ x for x in test_list if x<719]
+
+    error_list = [10,15,287,332,449,482,593,332,345]
+
+    _test_2_list = [ x for x in test_list if x<719]
+
+    test_2_list = [x for x in _test_2_list if x not in error_list]
+
+    print(test_2_list)
 
     data1 = myData(datapath,train_list)
     data2 = myData(datapath,test_2_list)
